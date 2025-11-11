@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JECRC BPT — Law, Ethics & Professional Values</title>
+  <style>
+    :root{--bg:#f6f8fb;--card:#fff;--accent:#0b63d5;--muted:#6b7280}
+    body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);margin:0;color:#111}
+    .wrap{max-width:900px;margin:20px auto;padding:16px}
+    header{text-align:center;margin-bottom:20px}
+    h1{margin:0;font-size:1.6rem;color:var(--accent)}
+    .meta{color:var(--muted)}
+    .card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 6px 18px rgba(11,99,213,0.06);margin-top:16px}
+    .btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;margin:10px;transition:transform .2s}
+    .btn:hover{transform:scale(1.05)}
+    .hidden{display:none}
+    h2{color:var(--accent)}
+    ol{padding-left:1.1rem}
+    footer{color:var(--muted);font-size:0.9rem;margin-top:20px;text-align:center}
+    @media (max-width:700px){h1{font-size:1.3rem}.btn{width:90%;display:block;margin:10px auto}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>JECRC University — BPT 2nd Year</h1>
+      <div class="meta">Law, Ethics & Professional Values (BPY020A)</div>
+    </header>
+
+    <!-- Homepage -->
+    <div id="home" class="card">
+      <h2>Select Unit</h2>
+      <p>Click below to view detailed, marks-based solutions:</p>
+      <a href="#" class="btn" onclick="showUnit('unit3')">📘 View Unit 3</a>
+      <a href="#" class="btn" onclick="showUnit('unit4')">📗 View Unit 4</a>
+    </div>
+
+    <!-- Unit 3 -->
+    <section id="unit3" class="card hidden">
+      <h2>Unit 3 — Laws, Ethics & Professional Values</h2>
+      <a href="#" class="btn" onclick="showHome()">⬅ Back to Home</a>
+
+      <h3>Section A (5 × 2 = 10 Marks)</h3>
+      <ol>
+        <li><b>Principles of biomedical ethics:</b> Autonomy, Beneficence, Non-maleficence, Justice.</li>
+        <li><b>Near-miss event:</b> Incident that could cause harm but was averted.</li>
+        <li><b>Sentinel events:</b> Unexpected events causing serious harm/death.</li>
+        <li><b>Professional indemnity:</b> Insurance protecting professionals from negligence claims.</li>
+        <li><b>MLC:</b> Medico-legal case involving legal implications (assault, RTA, poisoning).</li>
+      </ol>
+
+      <h3>Section B (4 × 18 = 72 Marks)</h3>
+      <h4>1. Near-miss events</h4>
+      <p>Events that could cause harm but were prevented. Causes: human error, poor communication, unclear protocols. Prevention: checklists, EMR safeguards.</p>
+
+      <h4>2. MLC procedure</h4>
+      <p>Steps: Stabilise → Preserve evidence → Document → Notify police → Register MLC. Maintain confidentiality and chain of custody.</p>
+
+      <h4>3. Standardised protocols</h4>
+      <p>Protocols like WHO checklist and ISBAR ensure safety, reduce human error, and improve outcomes.</p>
+
+      <h4>4. Biomedical principles</h4>
+      <p>Autonomy, Beneficence, Non-maleficence, and Justice guide ethical physiotherapy practice.</p>
+    </section>
+
+    <!-- Unit 4 -->
+    <section id="unit4" class="card hidden">
+      <h2>Unit 4 — Laws, Ethics & Professional Values</h2>
+      <a href="#" class="btn" onclick="showHome()">⬅ Back to Home</a>
+
+      <h3>Section A (5 × 2 = 10 Marks)</h3>
+      <ol>
+        <li><b>Two laws:</b> Clinical Establishment Act (2010); Persons with Disabilities Act (1995).</li>
+        <li><b>Laws related to MLC:</b> IPC (1860); CrPC (1973).</li>
+        <li><b>Code of ethics (justice):</b> Treat all patients fairly without discrimination.</li>
+        <li><b>Solidarity:</b> Unity among healthcare workers promoting teamwork and trust.</li>
+        <li><b>Ethical documentation:</b> Truthful, confidential, and legally sound records.</li>
+      </ol>
+
+      <h3>Section B (4 × 18 = 72 Marks)</h3>
+      <h4>1. Code of Ethics for Physiotherapists</h4>
+      <p>Respect rights, maintain competence and honesty, ensure beneficence and justice, encourage teamwork.</p>
+
+      <h4>2. Laws affecting physiotherapy</h4>
+      <p>Clinical Establishment Act, Consumer Protection Act, Disabilities Act, IPC/CrPC, Indian Contract Act.</p>
+
+      <h4>3. Autonomy</h4>
+      <p>Patient’s right to make informed choices. Involves consent, privacy, and participation in decisions.</p>
+
+      <h4>4. Ethics documentation</h4>
+      <p>Outlines professional conduct, confidentiality, consent, and record-keeping standards.</p>
+    </section>
+
+    <footer>
+      <p> Created for BPT 2nd Year — Law, Ethics & Professional Values (Units 3 & 4)</p>
+    </footer>
+  </div>
+
+  <script>
+    function showUnit(unit){
+      document.getElementById('home').classList.add('hidden');
+      document.getElementById('unit3').classList.add('hidden');
+      document.getElementById('unit4').classList.add('hidden');
+      document.getElementById(unit).classList.remove('hidden');
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    function showHome(){
+      document.getElementById('unit3').classList.add('hidden');
+      document.getElementById('unit4').classList.add('hidden');
+      document.getElementById('home').classList.remove('hidden');
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+  </script>
+</body>
+</html>
