@@ -12,7 +12,8 @@ header{text-align:center;margin-bottom:20px}
 h1{color:var(--accent);margin:0 0 6px 0}
 .meta{color:var(--muted);font-size:0.95rem;margin-bottom:8px}
 .card{background:var(--card);padding:20px;border-radius:10px;box-shadow:0 6px 18px rgba(11,99,213,0.06);margin-bottom:18px}
-.btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600;margin:8px 6px}
+button,a.btn,a.btn-small{cursor:pointer}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600;margin:8px 6px;border:none}
 .btn-small{display:inline-block;background:#e6eefc;color:var(--accent);padding:6px 10px;border-radius:8px;text-decoration:none;font-weight:600;margin:6px;border:1px solid rgba(11,99,213,0.12)}
 .hidden{display:none}
 h2{color:var(--accent);margin-top:0}
@@ -20,7 +21,6 @@ h3{color:#0a4ea3;margin-bottom:6px}
 h4{color:#0b63d5;margin-bottom:6px}
 hr{border:0;border-top:1px solid #e5e7eb;margin:18px 0}
 ol,ul{padding-left:1.1rem}
-code{background:#f3f4f6;padding:2px 6px;border-radius:6px}
 footer{text-align:center;color:var(--muted);margin-top:20px;font-size:0.9rem}
 @media (max-width:700px){.btn{width:90%;display:block;margin:10px auto}.wrap{padding:12px}}
 </style>
@@ -36,242 +36,127 @@ footer{text-align:center;color:var(--muted);margin-top:20px;font-size:0.9rem}
   <div id="home" class="card">
     <h2>Select Unit</h2>
     <p>Click below to view the complete, marks-based solutions for each unit.</p>
-    <a href="#" class="btn" onclick="showUnit('unit3')">📘 View Unit 3</a>
-    <a href="#" class="btn" onclick="showUnit('unit4')">📗 View Unit 4</a>
+    <button class="btn" id="btnUnit3">📘 View Unit 3</button>
+    <button class="btn" id="btnUnit4">📗 View Unit 4</button>
   </div>
 
   <!-- UNIT 3 -->
-  <section id="unit3" class="card hidden" aria-hidden="true">
-    <a href="#" class="btn-small" onclick="showHome()">⬅ Back to Home</a>
+  <section id="unit3" class="card hidden">
+    <button class="btn-small" id="backFrom3">⬅ Back to Home</button>
     <h2>Unit 3 — Section A — (5 × 2 = 10 marks)</h2>
     <p><em>(Each answer ~2–3 lines; straight to the point)</em></p>
-
     <ol>
-      <li>
-        <strong>What are the principles of biomedical ethics?</strong><br>
-        Four core principles: <strong>Autonomy</strong> (respect patient’s choices), <strong>Beneficence</strong> (act in patient’s best interest), <strong>Non-maleficence</strong> (do no harm), <strong>Justice</strong> (fair distribution of healthcare/resources). These guide clinical decisions and professional conduct.
-      </li>
+      <li><strong>What are the principles of biomedical ethics?</strong><br>
+      Four core principles: <strong>Autonomy</strong>, <strong>Beneficence</strong>, <strong>Non-maleficence</strong>, <strong>Justice</strong>. These guide clinical decisions and professional conduct.</li>
       <hr>
-      <li>
-        <strong>What is a near-miss event?</strong><br>
-        A near-miss is an incident that could have caused harm but did not reach the patient due to timely interception or chance (e.g., wrong drug picked but detected before administration). It’s a warning sign for system weaknesses.
-      </li>
+      <li><strong>What is a near-miss event?</strong><br>
+      An incident that could have caused harm but was prevented before reaching the patient. (E.g., wrong drug detected before administration.)</li>
       <hr>
-      <li>
-        <strong>What are sentinel events?</strong><br>
-        Sentinel events are unexpected events causing serious harm or death (e.g., wrong-site surgery, severe medication error). They require immediate investigation and root-cause analysis.
-      </li>
+      <li><strong>What are sentinel events?</strong><br>
+      Unexpected events causing serious harm or death, such as wrong-site surgery, requiring root-cause analysis.</li>
       <hr>
-      <li>
-        <strong>What is purpose and coverage of professional indemnity insurance policy?</strong><br>
-        Purpose: protect a healthcare professional financially against claims of negligence or malpractice. Coverage typically includes legal defence costs, settlements/judgments up to policy limits, and sometimes regulatory investigation costs (subject to exclusions).
-      </li>
+      <li><strong>Professional indemnity insurance policy:</strong><br>
+      Protects healthcare professionals from negligence/malpractice claims. Covers legal costs, settlements, and sometimes investigation costs.</li>
       <hr>
-      <li>
-        <strong>What is MLC?</strong><br>
-        MLC = Medico-Legal Case — any case with legal implications (e.g., assault, RTA, poisoning, suspicious death). It requires special documentation, preservation of evidence, and reporting to legal/forensic authorities.
-      </li>
+      <li><strong>What is MLC?</strong><br>
+      Medico-Legal Case — any case with legal implications (e.g., assault, RTA, poisoning). Needs documentation and reporting to authorities.</li>
     </ol>
 
-    <hr>
-    <h3>Section B — (4 × 18 = 72 marks)</h3>
-    <p><em>(Each answer concise, structured, and exam-oriented)</em></p>
-
+    <hr><h3>Section B — (4 × 18 = 72 marks)</h3>
     <h4>1. Explain near-miss events. (18 marks)</h4>
-    <p><strong>Definition & difference:</strong> A near-miss is an occurrence that could have resulted in patient harm but was averted. Unlike adverse events (which cause harm), near-misses signal latent system flaws.</p>
-    <p><strong>Examples:</strong> wrong medication selected but intercepted, intended imaging order not transmitted but detected, patient ID mismatch discovered before procedure.</p>
-    <p><strong>Causes:</strong> human error, poor communication, unclear protocols, labeling/packaging issues, staffing/workload pressures, equipment failures.</p>
-    <p><strong>Importance of reporting:</strong> Reporting near-misses uncovers system vulnerabilities without the consequence of actual harm; increases safety culture; prevents recurrence.</p>
-    <p><strong>Investigation & response:</strong> Use non-punitive reporting; perform root-cause analysis (RCA); identify contributing factors; design corrective actions (process redesign, alerts, checklists).</p>
-    <p><strong>Prevention strategies:</strong> standardise procedures, enforce double-checks (e.g., two-person drug checks), improve handovers, staff training, electronic barcoding/EMR safeguards, regular audits and feedback.</p>
-    <p><strong>Outcome measures:</strong> reduced incidents, improved reporting rates, implemented corrective actions verified by follow-up audits.</p>
-    <p><em>(For exam: give one succinct RCA step and one example of a system fix for full credit.)</em></p>
+    <p>Definition & difference: A near-miss is an occurrence that could have resulted in patient harm but was averted. Unlike adverse events, near-misses reveal latent system flaws.</p>
+    <p>Examples: wrong medication intercepted, ID mismatch detected before procedure.</p>
+    <p>Causes: human error, communication gaps, unclear protocols, workload, equipment failure.</p>
+    <p>Importance: reveals safety gaps, promotes learning without patient harm.</p>
+    <p>Prevention: standardise procedures, double checks, training, EMR safeguards, audits.</p>
 
-    <hr>
-    <h4>2. Explain in detail about MLC including maintaining records, its types, confidentiality and release of medical information. What is procedure for receiving MLC? (18 marks)</h4>
-
-    <p><strong>Definition & types:</strong> MLC = Medico-Legal Case. Common types: homicidal/assault cases, suicidal attempts, accidental injuries (RTA), poisoning/overdose, sexual assault/rape, burn injuries, suspicious/unexplained deaths.</p>
-
-    <p><strong>Initial procedure on receipt (stepwise):</strong></p>
+    <hr><h4>2. Explain MLC in detail (records, types, confidentiality, procedure).</h4>
+    <p>MLC = Medico-Legal Case. Types: assault, RTA, poisoning, sexual assault, burns, suspicious death.</p>
     <ol>
-      <li><strong>Immediate medical care</strong> — stabilise patient irrespective of legal status.</li>
-      <li><strong>Preserve evidence</strong> — avoid altering wounds, collect clothing, swabs, label and store specimens with chain-of-custody.</li>
-      <li><strong>Document meticulously</strong> — time/date, detailed history (in patient’s words if possible), physical findings, photos (with consent where allowed), injuries mapped.</li>
-      <li><strong>Notify authorities</strong> — inform hospital medico-legal officer/police as per rules.</li>
-      <li><strong>MLC form/registration</strong> — register as MLC in hospital records; prepare reports for police/forensic department.</li>
-      <li><strong>Consent & counselling</strong> — obtain consent for procedures; inform about legal reporting obligations.</li>
+      <li>Stabilise patient first.</li>
+      <li>Preserve evidence (clothes, swabs, samples).</li>
+      <li>Document history, findings, photos with timestamps.</li>
+      <li>Notify police/MLC officer.</li>
+      <li>Register MLC and maintain secure records.</li>
     </ol>
+    <p>Confidentiality: release info only to police/court on written request or patient consent.</p>
 
-    <p><strong>Maintaining records:</strong> Use standardized MLC proformas; record identity, circumstances, clinical notes, investigations, chain of custody, photos, signatures of examining doctor; maintain secure, time-stamped copies; retain for legally mandated period (hospital policy/legal guidelines).</p>
+    <hr><h4>3. Standardised protocols in healthcare.</h4>
+    <p>Protocols are structured checklists and procedures to reduce human error. Examples: WHO surgical checklist, ISBAR handoff, central line bundle. They enforce verification and standard communication to prevent sentinel events.</p>
 
-    <p><strong>Confidentiality & release of information:</strong> Medical confidentiality is fundamental, but MLCs are an exception—certain information must be shared with police or court on lawful order. Release only on written request from competent authority (police, court) or with patient’s informed consent. Disclose minimum necessary data, maintain copies of requests and releases. Unauthorized disclosure is punishable.</p>
-
-    <p><strong>Key legal/ethical points:</strong> Treat patient clinically first, document objectively, avoid leading language, preserve evidence, follow institutional/legal protocols.</p>
-
-    <hr>
-    <h4>3. Discuss importance of standardized protocol in healthcare to prevent sentinel events. (18 marks)</h4>
-
-    <p><strong>Definition & purpose:</strong> Standardized protocols are evidence-based, stepwise procedures (checklists, guidelines, order sets) that reduce variation in care and ensure critical safety steps are performed. Their purpose is to minimise human error and prevent catastrophic sentinel events.</p>
-
-    <p><strong>Examples effective against sentinel events:</strong> WHO surgical safety checklist (pre-op verification, time-out), medication reconciliation at admission/discharge, barcoding for meds, central line insertion bundle, handoff/ISBAR communication protocol.</p>
-
-    <p><strong>How protocols prevent sentinel events:</strong></p>
-    <ul>
-      <li>Reduce variability so routine tasks include safety checks (prevents wrong-site/wrong-patient procedures).</li>
-      <li>Force critical verifications (ID checks, consent, allergy status).</li>
-      <li>Standardise communication during handovers to avoid information loss.</li>
-    </ul>
-
-    <p><strong>Implementation strategies:</strong> leadership commitment, multidisciplinary development, staff training and simulation, integrate into workflow (EMR order sets), visual prompts, appoint champions, continuous monitoring.</p>
-
-    <p><strong>Monitoring & improvement:</strong> track compliance, audit outcomes, perform root-cause analyses for breaches, use Plan-Do-Study-Act cycles to refine protocols.</p>
-
-    <p><strong>Barriers & solutions:</strong> resistance to change (engage staff), workflow mismatch (pilot test), incomplete adherence (feedback, accountability).</p>
-
-    <p><strong>Impact evidence:</strong> standard protocols consistently reduce surgical errors, medication errors, central line infections, and deaths — and create a culture of safety.</p>
-
-    <p><em>(For answers: mention one specific protocol and one metric to show effect.)</em></p>
-
-    <hr>
-    <h4>4. Explain in detail about biomedical principles. (18 marks)</h4>
-
-    <p><strong>Core principles (Beauchamp & Childress):</strong></p>
-    <ol>
-      <li><strong>Autonomy</strong> — respect patient’s right to make informed decisions; requires informed consent and disclosure of options/risks.</li>
-      <li><strong>Beneficence</strong> — act to benefit the patient; balance potential benefits of interventions.</li>
-      <li><strong>Non-maleficence</strong> — avoid causing harm; weigh risks vs benefits and minimise iatrogenic harm.</li>
-      <li><strong>Justice</strong> — fair allocation of resources and impartial treatment.</li>
-    </ol>
-
-    <p><strong>Supporting ethical duties:</strong> Veracity (truthfulness), Confidentiality (protect patient information), Fidelity (keeping commitments), Duty of care.</p>
-
-    <p><strong>Application in physiotherapy/BPT context:</strong></p>
-    <ul>
-      <li>Informed consent before treatment plans (explain goals, techniques, alternatives).</li>
-      <li><strong>Autonomy:</strong> respect refusal of painful procedures; offer alternatives.</li>
-      <li><strong>Beneficence & non-maleficence:</strong> choose evidence-based modalities to improve function while avoiding harmful over-treatment (e.g., avoid excessive aggressive mobilization causing injury).</li>
-      <li><strong>Justice:</strong> equitable access to rehab services.</li>
-    </ul>
-
-    <p><strong>Decision framework for conflicts:</strong> identify stakeholders, list ethical principles in tension, gather facts, consider legal obligations, consult colleagues/ethics committee, choose least harmful option with documented justification.</p>
-
-    <p><strong>Example scenario:</strong> A patient refuses a painful but potentially beneficial exercise — respect autonomy, re-explain benefits/risks, seek compromise (modify intensity), document discussion.</p>
-
-    <p><strong>Conclusion:</strong> Biomedical principles provide a practical framework for everyday clinical decisions, protect patient rights, and guide professional conduct.</p>
+    <hr><h4>4. Biomedical principles.</h4>
+    <p>Autonomy, Beneficence, Non-maleficence, Justice — the four core ethics. Applied through consent, fairness, and safe, evidence-based physiotherapy practice.</p>
   </section>
 
   <!-- UNIT 4 -->
-  <section id="unit4" class="card hidden" aria-hidden="true">
-    <a href="#" class="btn-small" onclick="showHome()">⬅ Back to Home</a>
-    <h2>Unit 4 — Section A (5 × 2 = 10 Marks)</h2>
-    <p><em>(Short Answers — 2 marks each, 2–3 lines only)</em></p>
-
+  <section id="unit4" class="card hidden">
+    <button class="btn-small" id="backFrom4">⬅ Back to Home</button>
+    <h2>Unit 4 — Law, Ethics and Professional Values</h2>
+    <h3>Section A (5 × 2 = 10 Marks)</h3>
     <ol>
-      <li>
-        <strong>Write two significant laws that directly affect physiotherapy practice.</strong><br>
-        <strong>Clinical Establishment Act (2010):</strong> Regulates registration and standardization of healthcare facilities.<br>
-        <strong>Persons with Disabilities Act (1995):</strong> Ensures rehabilitation, equal opportunities, and non-discrimination for disabled persons.
-      </li>
-      <hr>
-      <li>
-        <strong>Name laws pertaining to MLC.</strong><br>
-        <strong>Indian Penal Code (IPC), 1860</strong> – governs criminal liability.<br>
-        <strong>CrPC (Criminal Procedure Code), 1973</strong> – guides medico-legal investigations and reporting procedures.
-      </li>
-      <hr>
-      <li>
-        <strong>Write code of ethics for patient equality and justice.</strong><br>
-        Physiotherapists must treat every patient fairly, irrespective of gender, caste, status, or ability — ensuring equal access, non-discrimination, and justice in care delivery.
-      </li>
-      <hr>
-      <li>
-        <strong>Write in brief about solidarity.</strong><br>
-        Solidarity means professional unity and mutual support among healthcare workers to promote teamwork, trust, and collective responsibility for patient welfare.
-      </li>
-      <hr>
-      <li>
-        <strong>Explain in brief about ethical documentation of physiotherapist.</strong><br>
-        Ethical documentation means accurate, truthful, and confidential record-keeping of patient data, assessments, and treatments — maintaining integrity, confidentiality, and legal validity.
-      </li>
+      <li><strong>Two laws affecting physiotherapy:</strong> Clinical Establishment Act (2010); Persons with Disabilities Act (1995).</li>
+      <li><strong>Laws pertaining to MLC:</strong> IPC (1860); CrPC (1973).</li>
+      <li><strong>Code of ethics for justice:</strong> Treat every patient fairly, without discrimination.</li>
+      <li><strong>Solidarity:</strong> Professional unity and mutual support among healthcare workers.</li>
+      <li><strong>Ethical documentation:</strong> Accurate, truthful, confidential record-keeping maintaining legal validity.</li>
     </ol>
 
-    <hr>
-    <h3>Section B (4 × 18 = 72 Marks)</h3>
-    <p><em>(Long Answers — 18 marks each, well-structured and detailed)</em></p>
+    <hr><h3>Section B (4 × 18 = 72 Marks)</h3>
+    <h4>1. Code of Ethics for Physiotherapists.</h4>
+    <p>Guides professionals to maintain standards and ensure patient safety. Covers: patient rights, competence, accountability, beneficence, justice, communication, teamwork, solidarity.</p>
 
-    <h4>1. Code of Ethics for Physiotherapists – Explain in detail.</h4>
-    <p>The Code of Ethics guides physiotherapists to maintain professional standards and ensure patient safety.</p>
-    <ol>
-      <li><strong>Respect for Patient Rights:</strong><br>Obtain informed consent.<br>Maintain confidentiality and dignity.</li>
-      <li><strong>Professional Competence:</strong><br>Keep skills updated with continuous education.<br>Work within one’s scope of practice.</li>
-      <li><strong>Integrity and Accountability:</strong><br>Provide honest reports and avoid false documentation.<br>Accept responsibility for professional decisions.</li>
-      <li><strong>Beneficence and Non-Maleficence:</strong><br>Act in patient’s best interest and avoid harm.</li>
-      <li><strong>Justice and Equality:</strong><br>Treat all patients fairly and avoid discrimination.</li>
-      <li><strong>Professional Conduct:</strong><br>Maintain good communication with patients and colleagues.<br>Refrain from unethical advertising or fee practices.</li>
-      <li><strong>Collaboration and Solidarity:</strong><br>Promote inter-professional teamwork.</li>
-    </ol>
-    <p><strong>In summary:</strong> Ethical physiotherapy practice ensures trust, legal safety, and professional respect in the healthcare system.</p>
+    <h4>2. Laws affecting physiotherapy.</h4>
+    <ul>
+      <li>Clinical Establishment Act (2010)</li>
+      <li>Consumer Protection Act (2019)</li>
+      <li>Persons with Disabilities Act (1995)</li>
+      <li>IPC & CrPC (medico-legal duties)</li>
+      <li>Indian Contract Act (1872)</li>
+      <li>Professional Council Regulations</li>
+    </ul>
 
-    <hr>
-    <h4>2. What are laws affecting the physiotherapist and physiotherapy practice?</h4>
-    <p>Several Indian and professional laws directly influence physiotherapy practice:</p>
-    <ol>
-      <li>Clinical Establishment Act, 2010 – Regulates registration, infrastructure, and quality standards for healthcare facilities.</li>
-      <li>Consumer Protection Act, 2019 – Patients are consumers; physiotherapists must ensure proper care to avoid negligence claims.</li>
-      <li>Medical Termination of Pregnancy Act, 1971 – Relevant for women’s rehabilitation and consent awareness.</li>
-      <li>Indian Penal Code (IPC) and CrPC – Define criminal responsibility in medico-legal cases and reporting duties.</li>
-      <li>Persons with Disabilities Act, 1995 – Promotes equal rights and rehabilitation for differently-abled persons.</li>
-      <li>Indian Contract Act, 1872 – Legal basis for consent and treatment agreements.</li>
-      <li>Professional Council Regulations – State or national physiotherapy council codes guide ethics and licensing.</li>
-    </ol>
-    <p><strong>Conclusion:</strong><br>A physiotherapist must be aware of these laws to ensure safe, legal, and ethical practice.</p>
+    <h4>3. Autonomy.</h4>
+    <p>Right of patients to make informed choices. Involves consent, privacy, shared decision-making, respecting refusal, ensuring dignity.</p>
 
-    <hr>
-    <h4>3. Explain autonomy in detail.</h4>
-    <p><strong>Definition:</strong><br>Autonomy is the right of a patient to make informed decisions about their own care.</p>
-    <p><strong>Key Aspects:</strong></p>
-    <ol>
-      <li><strong>Informed Consent:</strong> Patient must be given complete information about the procedure, risks, and alternatives before agreeing.</li>
-      <li><strong>Freedom of Choice:</strong> Patients have the right to refuse or discontinue treatment.</li>
-      <li><strong>Respect for Privacy:</strong> Maintain confidentiality of records and personal data.</li>
-      <li><strong>Shared Decision-Making:</strong> Encourage patient participation in goal-setting and treatment planning.</li>
-      <li><strong>Physiotherapist’s Role:</strong> Respect choices, guide ethically, and never force treatment.</li>
-    </ol>
-    <p><strong>Example:</strong><br>If a patient refuses electrotherapy due to discomfort, the physiotherapist should respect the choice and offer alternate therapy.</p>
-    <p><strong>Importance:</strong><br>Promotes trust, dignity, and patient satisfaction while preventing legal or ethical conflicts.</p>
-
-    <hr>
-    <h4>4. Write a note on ethics document for physiotherapist in detail.</h4>
-    <p><strong>Definition:</strong><br>An ethics document is a formal guideline outlining moral, legal, and professional standards for physiotherapists.</p>
-    <p><strong>Main Components:</strong></p>
-    <ol>
-      <li><strong>Professional Responsibilities:</strong> Maintain competence, honesty, and transparency.</li>
-      <li><strong>Patient Care Ethics:</strong> Ensure beneficence, autonomy, and justice in all actions.</li>
-      <li><strong>Confidentiality:</strong> Protect all patient information unless disclosure is legally required.</li>
-      <li><strong>Consent & Communication:</strong> Always obtain informed consent and communicate clearly.</li>
-      <li><strong>Record Maintenance:</strong> Keep accurate and retrievable treatment records for legal compliance.</li>
-      <li><strong>Professional Relationships:</strong> Treat colleagues and other professionals with respect.</li>
-      <li><strong>Research & Education Ethics:</strong> Follow ethical norms in research, avoid plagiarism, and acknowledge contributions.</li>
-      <li><strong>Public Representation:</strong> Avoid false claims, unethical advertising, or fee manipulation.</li>
-    </ol>
-    <p><strong>Purpose:</strong><br>To safeguard patient rights, maintain professional dignity, and prevent ethical/legal violations.</p>
-    <p><strong>Conclusion:</strong><br>Every physiotherapist should follow this document to uphold integrity, accountability, and excellence in the healthcare profession.</p>
+    <h4>4. Ethics documentation.</h4>
+    <p>Defines moral and professional standards: confidentiality, consent, record maintenance, honesty, and lawful conduct.</p>
   </section>
 
   <footer>
-    <p> BPT 2nd Year — Law, Ethics & Professional Values </p>
+    <p>© 2025 JECRC University | BPT 2nd Year — Law, Ethics & Professional Values</p>
   </footer>
 </div>
 
 <script>
-function showUnit(unit){
-  document.getElementById('home').classList.add('hidden');
-  document.getElementById('unit3').classList.add('hidden');
-  document.getElementById('unit4').classList.add('hidden');
-  document.getElementById(unit).classList.remove('hidden');
-  // update aria-hidden attributes for accessibility
-  document.getElementById('unit3').setAttribute('aria-hidden', unit!=='unit3');
-  document.getElementById('unit4').setAttribute('aria-hidden', unit!=='unit4');
-}
-function showHome(){
-  document.getElementById('home').cla
+document.addEventListener("DOMContentLoaded", function(){
+  const home = document.getElementById("home");
+  const unit3 = document.getElementById("unit3");
+  const unit4 = document.getElementById("unit4");
+  const btnUnit3 = document.getElementById("btnUnit3");
+  const btnUnit4 = document.getElementById("btnUnit4");
+  const backFrom3 = document.getElementById("backFrom3");
+  const backFrom4 = document.getElementById("backFrom4");
+
+  function show(section){
+    home.classList.add("hidden");
+    unit3.classList.add("hidden");
+    unit4.classList.add("hidden");
+    section.classList.remove("hidden");
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+
+  function showHome(){
+    unit3.classList.add("hidden");
+    unit4.classList.add("hidden");
+    home.classList.remove("hidden");
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+
+  btnUnit3.addEventListener("click", ()=>show(unit3));
+  btnUnit4.addEventListener("click", ()=>show(unit4));
+  backFrom3.addEventListener("click", showHome);
+  backFrom4.addEventListener("click", showHome);
+});
+</script>
+</body>
+</html>
